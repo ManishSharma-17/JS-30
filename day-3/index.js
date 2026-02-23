@@ -35,7 +35,32 @@ console.log(Calculator.add(2, 3)); // Output: 5
 // Attempting to access static members on an instance results in undefined or an error
 const myCalc = new Calculator();
 console.log(myCalc.PI);          // Output: undefined
-console.log(myCalc.add(2, 3));   // Output: TypeError: myCalc.add is not a function
+// console.log(myCalc.add(2, 3));   // Output: TypeError: myCalc.add is not a function
 
 // Accessing the instance method
 console.log(myCalc.multiply(2, 3)); // Output: 6
+
+
+/**
+Real-World Use Cases
+- Custom iterators
+- Infinite scrolling
+- Data streaming
+- State machines
+- Lazy data processing
+- Task scheduling systems
+ */
+
+//funciton generator example
+function* numberGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const gen = numberGenerator();
+
+console.log(gen.next()); // Output: { value: 1, done: false }
+console.log(gen.next()); // Output: { value: 2, done: false }
+console.log(gen.next()); // Output: { value: 3, done: false }
+console.log(gen.next()); // Output: { value: undefined, done: true }
